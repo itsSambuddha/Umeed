@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui" />
+  <title>Umeed - Login & Signup</title>
+  <!-- Vuetify CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.6.14/dist/vuetify.min.css" rel="stylesheet" />
+  <!-- Google Fonts Roboto -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet" />
+  <!-- Material Design Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css" rel="stylesheet" />
+  <style>
+    #app {
+      max-width: 400px;
+      margin: 50px auto;
+    }
+    .toggle-group {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <v-app>
+      <v-card>
+        <v-toolbar color="deep-purple accent-4" dark flat>
+          <v-toolbar-title>Umeed</v-toolbar-title>
+          <v-spacer></v-spacer>
+          <v-btn-toggle v-model="userType" mandatory>
+            <v-btn value="user">User</v-btn>
+            <v-btn value="admin">Admin</v-btn>
+          </v-btn-toggle>
+        </v-toolbar>
+
+        <v-tabs v-model="tab" background-color="deep-purple accent-4" dark>
+          <v-tab key="login">Login</v-tab>
+          <v-tab key="signup">Signup</v-tab>
+        </v-tabs>
+
+        <v-tabs-items v-model="tab">
+          <v-tab-item key="login">
+            <v-card-text>
+              <v-form ref="loginForm" v-model="loginValid" lazy-validation>
+                <v-text-field
+                  v-model="loginEmail"
+                  label="Email"
+                  :rules="emailRules"
+                  required
+                ></v-text-field>
+                <v-text-field
+                  v-model="loginPassword"
+                  label="Password"
+                  type="password"
+                  :rules="passwordRules"
+                  required
+                ></v-text-field>
+                <v-btn
+                  color="deep-purple accent-4"
+                  :disabled="!loginValid"
+                  @click="submitLogin"
+                  block
+                >Login</v-btn>
+              </v-form>
+            </v-card-text>
+          </v-tab-item>
+
+          <v-tab-item key="signup">
+            <v-card-text>
+              <v-form ref="signupForm" v-model="signupValid" lazy-validation>
+                <v-text-field
+                  v-model="signupName"
+                  label="Full Name"
+                  :rules="nameRules"
+                  required
+                ></v-text-field>
+                <v-text-field
+                  v-model="signupEmail"
+                  label="Email"
+                  :rules="emailRules"
+                  required
+                ></v-text-field>
+                <v-text-field
+                  v-model="signupPassword"
+                  label="Password"
+                  type="password"
+                  :rules="passwordRules"
+                  required
+                ></v-text-field>
+                <v-text-field
+                  v-model="signupConfirmPassword"
+                  label="Confirm Password"
+                  type="password"
+                  :rules="[confirmPasswordRule]"
+                  required
+                ></v-text-field>
+                <v-btn
+                  color="deep-purple accent-4"
+                  :disabled="!signupValid"
+                  @click="submitSignup"
+                  block
+                >Signup</v-btn>
+              </v-form>
+            </v-card-text>
+          </v-tab-item>
+        </v-tabs-items>
+      </v-card>
+    </v-app>
+  </div>
+
+  <!-- Vue.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  <!-- Vuetify JS CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.6.14/dist/vuetify.js"></script>
+
+  <script>
+    new Vue({
+      el: '#app',
+      vuetify: new Vuetify(),
+      data: () => ({
+        userType: 'user',
+        tab: 0,
+        // Login form data
+        loginEmail: '',
+        loginPassword: '',
+        loginValid: false,
+        // Signup form data
+        signupName: '',
+        signupEmail: '',
+        signupPassword: '',
+        signupConfirmPassword: '',
+        signupValid: false,
+        // Validation rules
+        emailRules: [
+          v => !!v || 'Email is required',
+          v => /.+@.+\..+/.test(v) || 'E-mail must be valid',
+        ],
+        passwordRules: [
+          v => !!v || 'Password is required',
+          v => v.length >= 6 || 'Password must be at least 6 characters',
+        ],
+        nameRules: [
+          v => !!v || 'Name is required',
+          v => v.length >= 3 || 'Name must be at least 3 characters',
+        ],
+      }),
+      methods: {
+        confirmPasswordRule() {
+          return this.signupConfirmPassword === this.signupPassword || 'Passwords must match';
+        },
+        submitLogin() {
+          if (this.$refs.loginForm.validate()) {
+            alert(`Logging in as ${this.userType} with email: ${this.loginEmail}`);
+            // Implement actual login logic here
+          }
+        },
+        submitSignup() {
+          if (this.$refs.signupForm.validate()) {
+            alert(`Signing up as ${this.userType} with email: ${this.signupEmail}`);
+            // Implement actual signup logic here
+          }
+        },
+      },
+    });
+  </script>
+</body>
+</html>

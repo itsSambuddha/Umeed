@@ -1,0 +1,46 @@
+/* body{
+background-color :rgb(201, 236, 241);
+}
+h1{
+
+    color :rgb(16, 73, 126);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+} */
+
+*{
+    
+    background-color :rgb(201, 236, 241);
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+header{
+    position: fixed;
+    top:0%;
+    left:0%;
+    width:100%;
+    padding: 20px 100px;
+    background:linear-gradient(rgb(86, 148, 206), rgb(201, 236, 241) );
+    /* background-color: rgb(86, 148, 206); */
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+
+}
+.Umeed {
+    font-size: 50px;
+    background: linear-gradient(rgb(86, 148, 206), rgb(201, 236, 241) , white);
+    color:rgb(0, 24, 66)
+    
+}
+
+.navigation {
+    position: relative;
+    font-size: 15px;
+    color: black;
+    text-decoration: none;
+    font-weight: 500;
+}
