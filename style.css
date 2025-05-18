@@ -40,7 +40,7 @@ header {
   gap: 20px;
 } */
 
-.navigation a {
+.navigation .about{
   position: relative;
   font-size: 1.1em;
   color: white;
@@ -51,7 +51,7 @@ header {
   gap: 10px;;
 }
 
-.navigation a::after {
+.navigation .about::after {
   content: "";
   position: absolute;
   left: 0;
@@ -64,9 +64,94 @@ header {
   transition: transform 0.3s ease-in-out;
 }
 
-.navigation a:hover::after {
+.navigation .about:hover::after {
   transform: scaleX(1);
 }
+
+.navigation .test{
+  position: relative;
+  font-size: 1.1em;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 40px;
+  padding-bottom: 5px;
+  gap: 10px;;
+}
+
+.navigation .test::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 2px;
+  background: var(--primary-color);
+  border-radius: 5px;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.navigation .test:hover::after {
+  transform: scaleX(1);
+}
+
+.navigation .resources{
+  position: relative;
+  font-size: 1.1em;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 40px;
+  padding-bottom: 5px;
+  gap: 10px;;
+}
+
+.navigation .resources::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 2px;
+  background: var(--primary-color);
+  border-radius: 5px;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.navigation .resources:hover::after {
+  transform: scaleX(1);
+}
+
+.navigation .chat{
+  position: relative;
+  font-size: 1.1em;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 40px;
+  padding-bottom: 5px;
+  gap: 10px;;
+}
+
+.navigation .chat::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 2px;
+  background: var(--primary-color);
+  border-radius: 5px;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.navigation .chat:hover::after {
+  transform: scaleX(1);
+}
+
 
 .navigation .buttonLogin-Popup{
 
@@ -93,7 +178,8 @@ header {
 
 .main-content {
   padding: 40px 100px;
-  background-color: white;
+  background-color: rgb(251, 254, 255);
+  /* background: linear-gradient(rgb(201, 236, 241), rgb(118, 171, 220), rgb(201, 236, 241)); */
   min-height: 70vh;
   display: flex;
   justify-content: center;
