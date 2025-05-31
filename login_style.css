@@ -8,8 +8,10 @@
 :root {
   --primary-color: rgb(61, 122, 179);
   --secondary-color: rgb(201, 236, 241);
+  --tertiary-color:blue;
   --text-color: rgb(0, 24, 66);
   --background-color: rgb(201, 236, 241);
+  
 }
 
 body {
@@ -289,6 +291,15 @@ footer {
     flex-direction: column;
     align-items: flex-start;
   }
+}
+
+/* Gradient background for login page */
+.login-background {
+  background: linear-gradient(rgb(201, 236, 241), rgb(118, 171, 220), rgb(201, 236, 241));
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 
