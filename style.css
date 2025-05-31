@@ -289,6 +289,124 @@ footer {
     flex-direction: column;
     align-items: flex-start;
   }
+}
+
+.login-container {
+  max-width: 400px;
+  margin: 80px auto;
+  background-color: white;
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: var(--text-color);
+}
+
+.login-container h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: var(--primary-color);
+}
+
+.login-form .input-group {
+  margin-bottom: 20px;
+}
+
+.input-box {
+  display: flex;
+  align-items: center;
+  border: 1.5px solid var(--primary-color);
+  border-radius: 8px;
+  padding: 10px 15px;
+  gap: 10px;
+  background-color: var(--secondary-color);
+  transition: border-color 0.3s ease;
+}
+
+.input-box input {
+  border: none;
+  outline: none;
+  flex: 1;
+  font-size: 1rem;
+  background-color: transparent;
+  color: var(--text-color);
+}
+
+.input-box input::placeholder {
+  color: var(--text-color);
+  opacity: 0.7;
+}
+
+.input-box:hover,
+.input-box:focus-within {
+  border-color: var(--primary-color);
+  background-color: white;
+}
+
+.icon {
+  font-size: 1.2rem;
+  color: var(--primary-color);
+}
+
+.remember-forgot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  font-size: 0.9rem;
+}
+
+.remember-forgot label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.forgot-link {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.forgot-link:hover {
+  text-decoration: underline;
+}
+
+.btn.login-btn {
+  width: 100%;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 14px 0;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: 600;
+  transition: .3s;
+}
+
+.btn.login-btn:hover {
+  background-color: rgb(231, 244, 255);
+  color: rgb(47, 108, 165);
+}
+
+.login-register {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.95rem;
+}
+
+.login-register .register-link {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.login-register .register-link:hover {
+  text-decoration: underline;
+}
 
   .Umeed {
     font-size: 40px;
@@ -355,4 +473,7 @@ footer {
     flex-direction: column;
     gap: 15px;
   }
-}  
+  
+
+
+
